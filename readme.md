@@ -9,7 +9,7 @@ JWT_SECRET= ***
 ### service
 |path|mothod|authen|params|query|body|
 |:---|:---|:---|:---|:---|:---|
-|/auth/register|post|-|-|-|{identity, firstName,lastName, passeord, confirmpassword}
+|/auth/register|post|-|-|-|{identity, firstName,lastName, password, confirmpassword}
 |/auth/login|post|-|-|-| {identity,password}
 |/auth/me|get|y|-|-|-|
 |/post|get|y|-|-|-|

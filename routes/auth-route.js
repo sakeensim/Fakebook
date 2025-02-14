@@ -1,10 +1,11 @@
 const express = require("express")
-const { register, login, getMe } = require("../controllers/auth-controller")
 const authRoute = express.Router()
+const { register, login, getMe } = require("../controllers/auth-controller")
+const authenticate = require("../middlewares/authenticate")
 
 authRoute.post('/register', register)
 authRoute.post('/login', login)
-authRoute.get('/me', getMe)
+authRoute.get('/me', authenticate, getMe)
 
 
 module.exports = authRoute
