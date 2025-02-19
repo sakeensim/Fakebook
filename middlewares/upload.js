@@ -10,7 +10,7 @@ const storage = multer.diskStorage({
         console.log(path.extname(file.originalname))
         let fileExt = path.extname(file.originalname)
 
-        cb(null, `Pic_${Date.now()}_${Math.round(Math.random()*100)} ${fileExt}`)
+        cb(null, `Pic_${Date.now()}_${Math.round(Math.random()*100)}${fileExt}`)
 
 }
 })
