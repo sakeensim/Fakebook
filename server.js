@@ -6,8 +6,13 @@ const morgan = require('morgan')
 const notFound = require('./middlewares/notFound')
 const errorMiddleware = require('./middlewares/errorMiddleware')
 const authRoute = require('./routes/auth-route')
+const postRoute = require('./routes/post-route')
+const authenticate = require('./middlewares/authenticate')
+// const path = require('path')
 
-
+// about path for deploy 
+// console.log(__dirname)
+// console.log(path.join(__dirname, 'server'))
 
 const app = express()
 
@@ -30,7 +35,7 @@ const app = express()
 
 
     app.use("/auth",authRoute)
-    app.use("/post",(req,res)=>{res.send('post service')})
+    app.use("/post",authenticate,postRoute)
     app.use("/comment",(req,res)=>{res.send('comment service')})
     app.use("/like",(req,res)=>{res.send('send service')})
 
